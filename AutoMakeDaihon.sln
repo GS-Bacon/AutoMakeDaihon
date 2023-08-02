@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoMakeDaihon", "AutoMakeDaihon\AutoMakeDaihon.csproj", "{2ABDA712-896B-4A37-9D4B-8FECDDE276F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{C092AD8D-6687-459C-956C-24E5D7031E10}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2ABDA712-896B-4A37-9D4B-8FECDDE276F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ABDA712-896B-4A37-9D4B-8FECDDE276F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ABDA712-896B-4A37-9D4B-8FECDDE276F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ABDA712-896B-4A37-9D4B-8FECDDE276F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C092AD8D-6687-459C-956C-24E5D7031E10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C092AD8D-6687-459C-956C-24E5D7031E10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C092AD8D-6687-459C-956C-24E5D7031E10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C092AD8D-6687-459C-956C-24E5D7031E10}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C4ABD032-454D-4904-BFEF-1F19687230C5}
+	EndGlobalSection
+EndGlobal
