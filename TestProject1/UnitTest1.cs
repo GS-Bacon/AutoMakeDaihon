@@ -3,6 +3,7 @@ using testapp;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows;
+using AutoMakeDaihon;
 
 namespace TestProject1
 {
@@ -17,14 +18,11 @@ namespace TestProject1
         }
 
         [TestMethod]
-        public void TestMethod1(string[] args)
+        public void TestMethod1()
         {
-            GetHTML getHTML = new GetHTML();
-            Uri uri = new("https://www.aozora.gr.jp/cards/000081/files/1946_11970.html");
-            Task<string> test =getHTML.GetHTMLFile(uri);
-            test.Wait();
-            string result = test.Result;
-            Console.WriteLine(result);
+
+            ConvertHTML convertHtml=new ConvertHTML("https://www.aozora.gr.jp/cards/000081/files/1946_11970.html");
+            Console.WriteLine( convertHtml.ConvetText);
         }
     }
 }
