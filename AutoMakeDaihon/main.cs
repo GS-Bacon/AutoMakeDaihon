@@ -8,7 +8,7 @@ namespace AutoMakeDaihon
 {
     class AutoMakeDaihon
     {
-        static async Task Main(string[] args)
+        static void Main(string[] args)
         {
             string URL = "https://jlp.yahooapis.jp/FuriganaService/V2/furigana";
             string PostText = "漢字かな交じり文にふりがなを振ること。";

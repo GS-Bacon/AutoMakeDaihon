@@ -25,8 +25,8 @@ namespace testapp
         }
         public AngleSharp.Html.Dom.IHtmlDocument GetHTMLforURL()//URLからHTMLファイルを取得
         {
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
-            var parser = new AngleSharp.Html.Parser.HtmlParser();
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12; //よくわからん
+            var parser = new AngleSharp.Html.Parser.HtmlParser(); //HTMLパーサー
             var document = new HTMLDocument(@url);
             string result = document.DocumentElement.OuterHTML;
             var parsedDoc = parser.ParseDocument(result);
@@ -48,7 +48,7 @@ namespace testapp
             }
             return maintext;
         }
-        public string AddRuby(string text)
+        public string AddRuby(string text) //YahooルビAPIから返ってきたJsonをLatexの\rubyに変換
         {
             string maintext = null;
             PostRubyAPI postRubyAPI = new PostRubyAPI(text);
@@ -66,7 +66,7 @@ namespace testapp
                 object _vfurigana = ((JValue)word.SelectToken("furigana")).Value;
                 string _vfuriganas = Convert.ToString(_vfurigana);
 
-                    if (word.SelectToken("subword") != null)
+                    if (word.SelectToken("subword") != null)//カナ交じりで変換されるとsubwordが設定される
                     {
 
                         foreach (JToken subword in (JArray)word.SelectToken("subword"))
@@ -80,20 +80,20 @@ namespace testapp
                                 @"[\p{IsCJKUnifiedIdeographs}" +
                                 @"\p{IsCJKCompatibilityIdeographs}" +
                                 @"\p{IsCJKUnifiedIdeographsExtensionA}]|" +
-                                @"[\uD840-\uD869][\uDC00-\uDFFF]|\uD869[\uDC00-\uDEDF]"))
+                                @"[\uD840-\uD869][\uDC00-\uDFFF]|\uD869[\uDC00-\uDEDF]"))//漢字が含まれていたらtureを返す正規表現らしい
                             {
                                 maintext += "\\ruby{" + _va + "}" + "{" + _vd + "}";
                             }
                             else
                             {
-                                maintext += _va;
+                                maintext += _va;//漢字が含まれていなければルビを振らない
                             }
                         }
 
                     }
                     else
                     {
-                        maintext += "\\ruby{" + _vsurfaces + "}" + "{" + _vfuriganas + "}";
+                        maintext += "\\ruby{" + _vsurfaces + "}" + "{" + _vfuriganas + "}";//カナ混じりでないならば漢字にルビを振る
                     }
                 }
                 else
