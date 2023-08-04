@@ -8,10 +8,13 @@ namespace AutoMakeDaihon
 {
     class AutoMakeDaihon
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            ConvertConfig config = new ConvertConfig();
-            Console.WriteLine(config.config[0]["after"]);
+            string URL = "https://jlp.yahooapis.jp/FuriganaService/V2/furigana";
+            string PostText = "漢字かな交じり文にふりがなを振ること。";
+            PostRubyAPI postRubyAPI = new PostRubyAPI(URL, PostText, "123");
+            var result = postRubyAPI.PostsAPI();
+            Console.WriteLine(result);
         }
     }
 }
